@@ -6,6 +6,8 @@ A large language model (GPT) is pre-trained for producing positive continuation 
 Strategy for solution:
 The language model (LM) GPT2 generates a continuation (response) based on an input query (incomplete review). We use a pretrained BERT classifier as 'Reward Model' to generate a scalar score / reward representing the quality of the response output from LM. In the optimisation step of PPO, we use a reference LM to make sure the responses generated from 'LM being fine tuned' do not deviate too far from the reference LM. PPO training process optimizes the weights of 'LM being fine tuned' by using process outlined in image below.
 
+![alt text](https://github.com/s-arora1987/Deep-Reinforcement-Learning-to-Fine-Tune-a-Large-Language-Model/blob/main/trl_overview.png)
+
 Results:
 
 Output with batch size 4 was not satisfactory. So we increased batch size to 8. 
